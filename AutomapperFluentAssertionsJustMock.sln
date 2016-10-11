@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAssertionsDemo", "Flu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustMockDemo", "JustMockDemo\JustMockDemo.csproj", "{F349BD43-526E-4CE4-8A04-8D1D9FA0114E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F699A4E3-5977-433F-9D58-E5CC11986D77}"
+	ProjectSection(SolutionItems) = preProject
+		GitHub_Repository.txt = GitHub_Repository.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
