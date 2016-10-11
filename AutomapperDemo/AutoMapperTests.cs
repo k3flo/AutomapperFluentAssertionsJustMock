@@ -18,9 +18,15 @@ namespace AutomapperDemo
         {
             A a = new A();
 
-            B b = AutoMapper.Mapper.Map<B>(a);
+            try
+            {
+                B b = AutoMapper.Mapper.Map<B>(a);
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine("Mapper is noch nicht initialisiert!");
+            }
         }
-
 
         [Test]
         public void Automapper_Can_Map_One_Class_To_Another()
@@ -40,7 +46,6 @@ namespace AutomapperDemo
             Assert.AreEqual(a.Name, b.Name);
             Assert.AreEqual(a.Value, b.Value);
         }
-
 
         [Test]
         public void Automapper_Can_Map_One_Class_To_Another_Base_Class()
@@ -75,7 +80,6 @@ namespace AutomapperDemo
             Assert.AreEqual(a.Name, b.Name);
         }
 
-
         [Test]
         public void Automapper_Can_Map_One_Class_To_Base_Of_Another_With_Manual_MapperConfig_And_Child_Class_Is_Returned()
         {
@@ -92,7 +96,6 @@ namespace AutomapperDemo
             A a = new A();
             BBase b = mapper.Map<BBase>(a);
         }
-
 
         [Test]
         public void Automapper_Can_Map_One_Class_To_Another_With_Manual_MapperConfig_And_Different_PropertyNames()
@@ -112,7 +115,6 @@ namespace AutomapperDemo
 
             Assert.AreEqual(a.Adresse, b.Wohnort);
         }
-
 
         [Test]
         public void Automapper_Can_Map_One_Class_To_Another_And_Reverse_With_Manual_MapperConfig()
@@ -134,7 +136,6 @@ namespace AutomapperDemo
             Assert.AreEqual(a.Adresse, aZwei.Adresse);
             Assert.AreEqual(a.Name, aZwei.Name);
         }
-
 
         [Test]
         public void Automapper_Can_Map_Lists_Of_Base_Classes()
@@ -170,6 +171,15 @@ namespace AutomapperDemo
          *    durchläuft jede einzelne Property und falls eine dieser Property per Lazy Loading geladen wird, wird diese während des
          *    Automappings nachgeladen, was zu den bekannten "N+1" warnings des NHibernate Profilers führt.
          * 
+         *    Der Automapper ist >300% langsamer als wenn man Klassen per Hand mappen würde. Dies ist aber aufgrund des erheblichen
+         *    Mehraufwands des manuellen Mappens vertretbar.
+         *    
+         *    Alternativen:
+         *       • EmitMapper
+         *       • ValueInjecter
+         *       • BLToolkit
+         *       • Slapper.AutoMapper
+         *    
          * */
     }
 }

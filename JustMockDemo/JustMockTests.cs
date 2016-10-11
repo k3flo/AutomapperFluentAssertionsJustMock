@@ -53,6 +53,7 @@ namespace JustMockDemo
             var functionMock = Mock.Create<AddFunction>();
             functionMock.ValueA = 10;
             functionMock.ValueB = 20;
+            Mock.Arrange(() => functionMock.Calc()).CallOriginal();
 
             //Act
             var result = this._sut.Calculate(functionMock);
@@ -183,5 +184,16 @@ namespace JustMockDemo
             resultWithBoolParameter.Should().Be("Das war ein Bool");
             resultWithDecimalParameter.Should().Be(16.3m);
         }
+
+        /*
+         * 
+         *     Alternativen zu JustMock:
+         *        • NSubstitute
+         *        • Rhino Mocks
+         *        • Moq
+         *        • FakeItEasy
+         *        • NMock3
+         * 
+         */
     }
 }
