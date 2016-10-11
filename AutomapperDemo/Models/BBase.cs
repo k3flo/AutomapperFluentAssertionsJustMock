@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutomapperDemo
+namespace AutomapperDemo.Models
 {
-    class Program
+    public class BBase
     {
-        static void Main(string[] args)
-        {
-        }
+        public int Seite { get; set; }
     }
 }

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F349BD43-526E-4CE4-8A04-8D1D9FA0114E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JustMockDemo</RootNamespace>
+    <AssemblyName>JustMockDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=4.14.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.14.0\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.14.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.14.0\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.JustMock, Version=2016.3.914.2, Culture=neutral, PublicKeyToken=721b6c5bc0326b3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Telerik.JustMock.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IAdd.cs" />
+    <Compile Include="Interfaces\ICalcOperationWithParameter.cs" />
+    <Compile Include="Interfaces\ICalcOperation.cs" />
+    <Compile Include="JustMockTests.cs" />
+    <Compile Include="Models\AddFunctionWithNonVirtualMethod.cs" />
+    <Compile Include="Models\AddFunction.cs" />
+    <Compile Include="Models\Calculator.cs" />
+    <Compile Include="Models\ObjectFunction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Libs\JustMock.targets" />
+    <None Include="Libs\JustMockRunner.exe.config" />
+    <None Include="Libs\JustMockStartPage.exe.config" />
+    <None Include="Libs\Telerik.JustMock.Configuration.exe.config" />
+    <None Include="Libs\Telerik.JustMock.VS.vsix" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\JustMock.AddIn.AddIn" />
+    <Content Include="Libs\JustMockRunner.exe" />
+    <Content Include="Libs\JustMockStartPage.exe" />
+    <Content Include="Libs\ReactiveUI.dll" />
+    <Content Include="Libs\ReactiveUI.Xaml.dll" />
+    <Content Include="Libs\System.Reactive.Core.dll" />
+    <Content Include="Libs\System.Reactive.Interfaces.dll" />
+    <Content Include="Libs\System.Reactive.Linq.dll" />
+    <Content Include="Libs\System.Reactive.PlatformServices.dll" />
+    <Content Include="Libs\System.Reactive.Windows.Threading.dll" />
+    <Content Include="Libs\System.Runtime.dll" />
+    <Content Include="Libs\System.Threading.Tasks.dll" />
+    <Content Include="Libs\Telerik.JustMock.AddIn.dll" />
+    <Content Include="Libs\Telerik.JustMock.Build.Workflow.dll" />
+    <Content Include="Libs\Telerik.JustMock.Build.Workflow.VS2012.dll" />
+    <Content Include="Libs\Telerik.JustMock.Build.Workflow.VS2013.dll" />
+    <Content Include="Libs\Telerik.JustMock.Configuration.exe" />
+    <Content Include="Libs\Telerik.JustMock.dll" />
+    <Content Include="Libs\Telerik.JustMock.MSBuild.dll" />
+    <Content Include="Libs\Telerik.JustMock.Silverlight.dll" />
+    <Content Include="Libs\Telerik.JustMock.Silverlight.xml" />
+    <Content Include="Libs\Telerik.JustMock.VS.dll" />
+    <Content Include="Libs\Telerik.JustMock.VS.Implementation.dll" />
+    <Content Include="Libs\Telerik.JustMock.xml" />
+    <Content Include="Libs\Telerik.Windows.Controls.2013.2.0812.1140.dll" />
+    <Content Include="Libs\Telerik.Windows.Controls.Navigation.2013.2.0812.1140.dll" />
+    <Content Include="Libs\Telerik.Windows.Data.2013.2.0812.1140.dll" />
+    <Content Include="Libs\Telerik.Windows.Themes.Modern.2013.2.0812.1140.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
