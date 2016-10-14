@@ -67,6 +67,7 @@
     <Compile Include="Models\AddFunctionWithNonVirtualMethod.cs" />
     <Compile Include="Models\AddFunction.cs" />
     <Compile Include="Models\Calculator.cs" />
+    <Compile Include="Models\StaticClassWithGetterOnly.cs" />
     <Compile Include="Models\ObjectFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

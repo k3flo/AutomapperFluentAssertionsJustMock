@@ -123,7 +123,6 @@ namespace JustMockDemo
             result.Should().Be(99);
         }
 
-
         [Test]
         public void JustMock_Can_Test_If_Method_Was_Called()
         {
@@ -183,6 +182,15 @@ namespace JustMockDemo
             resultWithIntParameter.Should().Be("Das war ein Integer");
             resultWithBoolParameter.Should().Be("Das war ein Bool");
             resultWithDecimalParameter.Should().Be(16.3m);
+        }
+
+        [Test]
+        public void JustMock_Has_Reflection_Helper_Methods_To_Set_Fields_Of_Static_Classes()
+        {
+            var configurationHolderAccessor = PrivateAccessor.ForType(typeof(StaticClassWithGetterOnly));
+            configurationHolderAccessor.SetField("_value", "Geänderter Wert");
+
+            StaticClassWithGetterOnly.Value.Should().Be("Geänderter Wert");
         }
 
         /*
