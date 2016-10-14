@@ -193,6 +193,18 @@ namespace JustMockDemo
             StaticClassWithGetterOnly.Value.Should().Be("Geänderter Wert");
         }
 
+        [Test]
+        public void JustMock_Can_Mock_Static_Constructors()
+        {
+            Mock.IsProfilerEnabled.Should().BeTrue();
+
+            Mock.SetupStatic(typeof(StaticClassWhichThrowsExceptionInConstructor), StaticConstructor.Mocked);
+
+            Mock.Arrange(() => StaticClassWhichThrowsExceptionInConstructor.DoSomTingWong()).CallOriginal();
+
+            StaticClassWhichThrowsExceptionInConstructor.DoSomTingWong();
+        }
+
         /*
          * 
          *     Alternativen zu JustMock:
