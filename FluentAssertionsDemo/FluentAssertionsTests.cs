@@ -30,7 +30,7 @@ namespace FluentAssertionsDemo
 
             a.Should().StartWith("Ha").And.EndWith("lo").And.Contain("al").And.HaveLength(5);
         }
-
+        
         [Test]
         public void FluentAssertions_Can_Check_For_Exceptions()
         {
